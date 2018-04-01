@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fawcar.afterservice.dao.DeputeBillLineMapper" >
+  <resultMap id="BaseResultMap" type="com.fawcar.afterservice.entity.DeputeBillLine" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="NMAINID" property="nmainid" jdbcType="VARCHAR" />
+    <result column="CITEMCODE" property="citemcode" jdbcType="VARCHAR" />
+    <result column="CITEMNAME" property="citemname" jdbcType="VARCHAR" />
+    <result column="CKIND" property="ckind" jdbcType="CHAR" />
+    <result column="NMANHAUREXPEN" property="nmanhaurexpen" jdbcType="DOUBLE" />
+    <result column="NMANHAUR" property="nmanhaur" jdbcType="DOUBLE" />
+    <result column="NMANHAURDISCOUNTRATE" property="nmanhaurdiscountrate" jdbcType="DOUBLE" />
+    <result column="NWORKGROUPID" property="nworkgroupid" jdbcType="DOUBLE" />
+    <result column="NPRIMARYREPAIRMANID" property="nprimaryrepairmanid" jdbcType="INTEGER" />
+    <result column="DTASKBEGINDATE" property="dtaskbegindate" jdbcType="DATE" />
+    <result column="DBEGINDATE" property="dbegindate" jdbcType="DATE" />
+    <result column="DTASKFINISHDATE" property="dtaskfinishdate" jdbcType="DATE" />
+    <result column="NEFFECTIVEMANHAUR" property="neffectivemanhaur" jdbcType="DOUBLE" />
+    <result column="CPURSUEITEMFLAG" property="cpursueitemflag" jdbcType="CHAR" />
+    <result column="CREPAIRAGAINFLAG" property="crepairagainflag" jdbcType="CHAR" />
+    <result column="CACROSSCURRENTPERIODFLAG" property="cacrosscurrentperiodflag" jdbcType="CHAR" />
+    <result column="CBEGINFLAG" property="cbeginflag" jdbcType="CHAR" />
+    <result column="CFINISHFLAG" property="cfinishflag" jdbcType="CHAR" />
+    <result column="CREMARK" property="cremark" jdbcType="VARCHAR" />
+    <result column="DTSTAMP" property="dtstamp" jdbcType="TIMESTAMP" />
+    <result column="CKINDBACK" property="ckindback" jdbcType="CHAR" />
+    <result column="CRETURNFLAG" property="creturnflag" jdbcType="CHAR" />
+    <result column="CRETURNFLAG1" property="creturnflag1" jdbcType="CHAR" />
+    <result column="CRETURNFLAG2" property="creturnflag2" jdbcType="CHAR" />
+    <result column="CREMINDFLAG" property="cremindflag" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NMAINID, CITEMCODE, CITEMNAME, CKIND, NMANHAUREXPEN, NMANHAUR, NMANHAURDISCOUNTRATE, 
+    NWORKGROUPID, NPRIMARYREPAIRMANID, DTASKBEGINDATE, DBEGINDATE, DTASKFINISHDATE, NEFFECTIVEMANHAUR, 
+    CPURSUEITEMFLAG, CREPAIRAGAINFLAG, CACROSSCURRENTPERIODFLAG, CBEGINFLAG, CFINISHFLAG, 
+    CREMARK, DTSTAMP, CKINDBACK, CRETURNFLAG, CRETURNFLAG1, CRETURNFLAG2, CREMINDFLAG
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dsvcb20d
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dsvcb20d
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <select id="getLineById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dsvcb20d where NMAINID=#{Id}
+  </select>
+
+  <delete id="deleteLineById" parameterType="java.lang.String">
+    delete from dsvcb20d where NMAINID=#{id}
+  </delete>
+  <insert id="insert" parameterType="com.fawcar.afterservice.entity.DeputeBillLine" >
+    insert into dsvcb20d (ID, NMAINID, CITEMCODE, 
+      CITEMNAME, CKIND, NMANHAUREXPEN, 
+      NMANHAUR, NMANHAURDISCOUNTRATE, NWORKGROUPID, 
+      NPRIMARYREPAIRMANID, DTASKBEGINDATE, DBEGINDATE, 
+      DTASKFINISHDATE, NEFFECTIVEMANHAUR, CPURSUEITEMFLAG, 
+      CREPAIRAGAINFLAG, CACROSSCURRENTPERIODFLAG, CBEGINFLAG, 
+      CFINISHFLAG, CREMARK, DTSTAMP, 
+      CKINDBACK, CRETURNFLAG, CRETURNFLAG1, 
+      CRETURNFLAG2, CREMINDFLAG)
+    values (#{id,jdbcType=VARCHAR}, #{nmainid,jdbcType=VARCHAR}, #{citemcode,jdbcType=VARCHAR}, 
+      #{citemname,jdbcType=VARCHAR}, #{ckind,jdbcType=CHAR}, #{nmanhaurexpen,jdbcType=DOUBLE}, 
+      #{nmanhaur,jdbcType=DOUBLE}, #{nmanhaurdiscountrate,jdbcType=DOUBLE}, #{nworkgroupid,jdbcType=DOUBLE}, 
+      #{nprimaryrepairmanid,jdbcType=INTEGER}, #{dtaskbegindate,jdbcType=DATE}, #{dbegindate,jdbcType=DATE}, 
+      #{dtaskfinishdate,jdbcType=DATE}, #{neffectivemanhaur,jdbcType=DOUBLE}, #{cpursueitemflag,jdbcType=CHAR}, 
+      #{crepairagainflag,jdbcType=CHAR}, #{cacrosscurrentperiodflag,jdbcType=CHAR}, #{cbeginflag,jdbcType=CHAR}, 
+      #{cfinishflag,jdbcType=CHAR}, #{cremark,jdbcType=VARCHAR}, #{dtstamp,jdbcType=TIMESTAMP}, 
+      #{ckindback,jdbcType=CHAR}, #{creturnflag,jdbcType=CHAR}, #{creturnflag1,jdbcType=CHAR}, 
+      #{creturnflag2,jdbcType=CHAR}, #{cremindflag,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fawcar.afterservice.entity.DeputeBillLine" >
+    insert into dsvcb20d
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="nmainid != null" >
+        NMAINID,
+      </if>
+      <if test="citemcode != null" >
+        CITEMCODE,
+      </if>
+      <if test="citemname != null" >
+        CITEMNAME,
+      </if>
+      <if test="ckind != null" >
+        CKIND,
+      </if>
+      <if test="nmanhaurexpen != null" >
+        NMANHAUREXPEN,
+      </if>
+      <if test="nmanhaur != null" >
+        NMANHAUR,
+      </if>
+      <if test="nmanhaurdiscountrate != null" >
+        NMANHAURDISCOUNTRATE,
+      </if>
+      <if test="nworkgroupid != null" >
+        NWORKGROUPID,
+      </if>
+      <if test="nprimaryrepairmanid != null" >
+        NPRIMARYREPAIRMANID,
+      </if>
+      <if test="dtaskbegindate != null" >
+        DTASKBEGINDATE,
+      </if>
+      <if test="dbegindate != null" >
+        DBEGINDATE,
+      </if>
+      <if test="dtaskfinishdate != null" >
+        DTASKFINISHDATE,
+      </if>
+      <if test="neffectivemanhaur != null" >
+        NEFFECTIVEMANHAUR,
+      </if>
+      <if test="cpursueitemflag != null" >
+        CPURSUEITEMFLAG,
+      </if>
+      <if test="crepairagainflag != null" >
+        CREPAIRAGAINFLAG,
+      </if>
+      <if test="cacrosscurrentperiodflag != null" >
+        CACROSSCURRENTPERIODFLAG,
+      </if>
+      <if test="cbeginflag != null" >
+        CBEGINFLAG,
+      </if>
+      <if test="cfinishflag != null" >
+        CFINISHFLAG,
+      </if>
+      <if test="cremark != null" >
+        CREMARK,
+      </if>
+      <if test="dtstamp != null" >
+        DTSTAMP,
+      </if>
+      <if test="ckindback != null" >
+        CKINDBACK,
+      </if>
+      <if test="creturnflag != null" >
+        CRETURNFLAG,
+      </if>
+      <if test="creturnflag1 != null" >
+        CRETURNFLAG1,
+      </if>
+      <if test="creturnflag2 != null" >
+        CRETURNFLAG2,
+      </if>
+      <if test="cremindflag != null" >
+        CREMINDFLAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="nmainid != null" >
+        #{nmainid,jdbcType=VARCHAR},
+      </if>
+      <if test="citemcode != null" >
+        #{citemcode,jdbcType=VARCHAR},
+      </if>
+      <if test="citemname != null" >
+        #{citemname,jdbcType=VARCHAR},
+      </if>
+      <if test="ckind != null" >
+        #{ckind,jdbcType=CHAR},
+      </if>
+      <if test="nmanhaurexpen != null" >
+        #{nmanhaurexpen,jdbcType=DOUBLE},
+      </if>
+      <if test="nmanhaur != null" >
+        #{nmanhaur,jdbcType=DOUBLE},
+      </if>
+      <if test="nmanhaurdiscountrate != null" >
+        #{nmanhaurdiscountrate,jdbcType=DOUBLE},
+      </if>
+      <if test="nworkgroupid != null" >
+        #{nworkgroupid,jdbcType=DOUBLE},
+      </if>
+      <if test="nprimaryrepairmanid != null" >
+        #{nprimaryrepairmanid,jdbcType=INTEGER},
+      </if>
+      <if test="dtaskbegindate != null" >
+        #{dtaskbegindate,jdbcType=DATE},
+      </if>
+      <if test="dbegindate != null" >
+        #{dbegindate,jdbcType=DATE},
+      </if>
+      <if test="dtaskfinishdate != null" >
+        #{dtaskfinishdate,jdbcType=DATE},
+      </if>
+      <if test="neffectivemanhaur != null" >
+        #{neffectivemanhaur,jdbcType=DOUBLE},
+      </if>
+      <if test="cpursueitemflag != null" >
+        #{cpursueitemflag,jdbcType=CHAR},
+      </if>
+      <if test="crepairagainflag != null" >
+        #{crepairagainflag,jdbcType=CHAR},
+      </if>
+      <if test="cacrosscurrentperiodflag != null" >
+        #{cacrosscurrentperiodflag,jdbcType=CHAR},
+      </if>
+      <if test="cbeginflag != null" >
+        #{cbeginflag,jdbcType=CHAR},
+      </if>
+      <if test="cfinishflag != null" >
+        #{cfinishflag,jdbcType=CHAR},
+      </if>
+      <if test="cremark != null" >
+        #{cremark,jdbcType=VARCHAR},
+      </if>
+      <if test="dtstamp != null" >
+        #{dtstamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ckindback != null" >
+        #{ckindback,jdbcType=CHAR},
+      </if>
+      <if test="creturnflag != null" >
+        #{creturnflag,jdbcType=CHAR},
+      </if>
+      <if test="creturnflag1 != null" >
+        #{creturnflag1,jdbcType=CHAR},
+      </if>
+      <if test="creturnflag2 != null" >
+        #{creturnflag2,jdbcType=CHAR},
+      </if>
+      <if test="cremindflag != null" >
+        #{cremindflag,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fawcar.afterservice.entity.DeputeBillLine" >
+    update dsvcb20d
+    <set >
+      <if test="nmainid != null" >
+        NMAINID = #{nmainid,jdbcType=VARCHAR},
+      </if>
+      <if test="citemcode != null" >
+        CITEMCODE = #{citemcode,jdbcType=VARCHAR},
+      </if>
+      <if test="citemname != null" >
+        CITEMNAME = #{citemname,jdbcType=VARCHAR},
+      </if>
+      <if test="ckind != null" >
+        CKIND = #{ckind,jdbcType=CHAR},
+      </if>
+      <if test="nmanhaurexpen != null" >
+        NMANHAUREXPEN = #{nmanhaurexpen,jdbcType=DOUBLE},
+      </if>
+      <if test="nmanhaur != null" >
+        NMANHAUR = #{nmanhaur,jdbcType=DOUBLE},
+      </if>
+      <if test="nmanhaurdiscountrate != null" >
+        NMANHAURDISCOUNTRATE = #{nmanhaurdiscountrate,jdbcType=DOUBLE},
+      </if>
+      <if test="nworkgroupid != null" >
+        NWORKGROUPID = #{nworkgroupid,jdbcType=DOUBLE},
+      </if>
+      <if test="nprimaryrepairmanid != null" >
+        NPRIMARYREPAIRMANID = #{nprimaryrepairmanid,jdbcType=INTEGER},
+      </if>
+      <if test="dtaskbegindate != null" >
+        DTASKBEGINDATE = #{dtaskbegindate,jdbcType=DATE},
+      </if>
+      <if test="dbegindate != null" >
+        DBEGINDATE = #{dbegindate,jdbcType=DATE},
+      </if>
+      <if test="dtaskfinishdate != null" >
+        DTASKFINISHDATE = #{dtaskfinishdate,jdbcType=DATE},
+      </if>
+      <if test="neffectivemanhaur != null" >
+        NEFFECTIVEMANHAUR = #{neffectivemanhaur,jdbcType=DOUBLE},
+      </if>
+      <if test="cpursueitemflag != null" >
+        CPURSUEITEMFLAG = #{cpursueitemflag,jdbcType=CHAR},
+      </if>
+      <if test="crepairagainflag != null" >
+        CREPAIRAGAINFLAG = #{crepairagainflag,jdbcType=CHAR},
+      </if>
+      <if test="cacrosscurrentperiodflag != null" >
+        CACROSSCURRENTPERIODFLAG = #{cacrosscurrentperiodflag,jdbcType=CHAR},
+      </if>
+      <if test="cbeginflag != null" >
+        CBEGINFLAG = #{cbeginflag,jdbcType=CHAR},
+      </if>
+      <if test="cfinishflag != null" >
+        CFINISHFLAG = #{cfinishflag,jdbcType=CHAR},
+      </if>
+      <if test="cremark != null" >
+        CREMARK = #{cremark,jdbcType=VARCHAR},
+      </if>
+      <if test="dtstamp != null" >
+        DTSTAMP = #{dtstamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ckindback != null" >
+        CKINDBACK = #{ckindback,jdbcType=CHAR},
+      </if>
+      <if test="creturnflag != null" >
+        CRETURNFLAG = #{creturnflag,jdbcType=CHAR},
+      </if>
+      <if test="creturnflag1 != null" >
+        CRETURNFLAG1 = #{creturnflag1,jdbcType=CHAR},
+      </if>
+      <if test="creturnflag2 != null" >
+        CRETURNFLAG2 = #{creturnflag2,jdbcType=CHAR},
+      </if>
+      <if test="cremindflag != null" >
+        CREMINDFLAG = #{cremindflag,jdbcType=CHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fawcar.afterservice.entity.DeputeBillLine" >
+    update dsvcb20d
+    set NMAINID = #{nmainid,jdbcType=VARCHAR},
+      CITEMCODE = #{citemcode,jdbcType=VARCHAR},
+      CITEMNAME = #{citemname,jdbcType=VARCHAR},
+      CKIND = #{ckind,jdbcType=CHAR},
+      NMANHAUREXPEN = #{nmanhaurexpen,jdbcType=DOUBLE},
+      NMANHAUR = #{nmanhaur,jdbcType=DOUBLE},
+      NMANHAURDISCOUNTRATE = #{nmanhaurdiscountrate,jdbcType=DOUBLE},
+      NWORKGROUPID = #{nworkgroupid,jdbcType=DOUBLE},
+      NPRIMARYREPAIRMANID = #{nprimaryrepairmanid,jdbcType=INTEGER},
+      DTASKBEGINDATE = #{dtaskbegindate,jdbcType=DATE},
+      DBEGINDATE = #{dbegindate,jdbcType=DATE},
+      DTASKFINISHDATE = #{dtaskfinishdate,jdbcType=DATE},
+      NEFFECTIVEMANHAUR = #{neffectivemanhaur,jdbcType=DOUBLE},
+      CPURSUEITEMFLAG = #{cpursueitemflag,jdbcType=CHAR},
+      CREPAIRAGAINFLAG = #{crepairagainflag,jdbcType=CHAR},
+      CACROSSCURRENTPERIODFLAG = #{cacrosscurrentperiodflag,jdbcType=CHAR},
+      CBEGINFLAG = #{cbeginflag,jdbcType=CHAR},
+      CFINISHFLAG = #{cfinishflag,jdbcType=CHAR},
+      CREMARK = #{cremark,jdbcType=VARCHAR},
+      DTSTAMP = #{dtstamp,jdbcType=TIMESTAMP},
+      CKINDBACK = #{ckindback,jdbcType=CHAR},
+      CRETURNFLAG = #{creturnflag,jdbcType=CHAR},
+      CRETURNFLAG1 = #{creturnflag1,jdbcType=CHAR},
+      CRETURNFLAG2 = #{creturnflag2,jdbcType=CHAR},
+      CREMINDFLAG = #{cremindflag,jdbcType=CHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

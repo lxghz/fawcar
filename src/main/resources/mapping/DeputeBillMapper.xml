@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fawcar.afterservice.dao.DeputeBillMapper" >
+  <resultMap id="BaseResultMap" type="com.fawcar.afterservice.entity.DeputeBill" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="NDEALERID" property="ndealerid" jdbcType="VARCHAR" />
+    <result column="NBRANCHID" property="nbranchid" jdbcType="VARCHAR" />
+    <result column="CSERVICEREQUISITIONNO" property="cservicerequisitionno" jdbcType="VARCHAR" />
+    <result column="NVEHICLEID" property="nvehicleid" jdbcType="VARCHAR" />
+    <result column="CREPAIRSTATUS" property="crepairstatus" jdbcType="CHAR" />
+    <result column="DENTERDATE" property="denterdate" jdbcType="DATE" />
+    <result column="DPROMISEFINISHDATE" property="dpromisefinishdate" jdbcType="DATE" />
+    <result column="CFASTREPAIRFLAG" property="cfastrepairflag" jdbcType="CHAR" />
+    <result column="NOPERATORID" property="noperatorid" jdbcType="INTEGER" />
+    <result column="NSERVICECONSULTANTID" property="nserviceconsultantid" jdbcType="INTEGER" />
+    <result column="CCONTRACTWORKMODE" property="ccontractworkmode" jdbcType="CHAR" />
+    <result column="CPARKINGPOSITION" property="cparkingposition" jdbcType="VARCHAR" />
+    <result column="NMILEAGE" property="nmileage" jdbcType="INTEGER" />
+    <result column="DFIRSTCHECKOUTDATE" property="dfirstcheckoutdate" jdbcType="VARCHAR" />
+    <result column="DCHECKDATE" property="dcheckdate" jdbcType="VARCHAR" />
+    <result column="NEXAMINEID" property="nexamineid" jdbcType="INTEGER" />
+    <result column="NCHECKERID" property="ncheckerid" jdbcType="INTEGER" />
+    <result column="NCHECKBILLID" property="ncheckbillid" jdbcType="INTEGER" />
+    <result column="NCONTRACTID" property="ncontractid" jdbcType="INTEGER" />
+    <result column="CCREDENTIALS" property="ccredentials" jdbcType="VARCHAR" />
+    <result column="COWEFLAG" property="coweflag" jdbcType="CHAR" />
+    <result column="NMANHAUR" property="nmanhaur" jdbcType="DOUBLE" />
+    <result column="NSTANDARDRATIONID" property="nstandardrationid" jdbcType="INTEGER" />
+    <result column="NMATECOST" property="nmatecost" jdbcType="DOUBLE" />
+    <result column="NEFFECTIVEMANHAUR" property="neffectivemanhaur" jdbcType="DOUBLE" />
+    <result column="CACROSSCURRENTPERIODFLAG" property="cacrosscurrentperiodflag" jdbcType="CHAR" />
+    <result column="NRESCUEEXPEN" property="nrescueexpen" jdbcType="DOUBLE" />
+    <result column="NCONTRACTEXPEN" property="ncontractexpen" jdbcType="DOUBLE" />
+    <result column="CPROBLEMSETTLEFLAG" property="cproblemsettleflag" jdbcType="CHAR" />
+    <result column="CMALFUNCTIONDESCRIPTION" property="cmalfunctiondescription" jdbcType="VARCHAR" />
+    <result column="CREMARK" property="cremark" jdbcType="VARCHAR" />
+    <result column="DTSTAMP" property="dtstamp" jdbcType="TIMESTAMP" />
+    <result column="NLINKMANID" property="nlinkmanid" jdbcType="INTEGER" />
+    <result column="NRVTIMES" property="nrvtimes" jdbcType="INTEGER" />
+    <result column="CCUSTOMERCODE" property="ccustomercode" jdbcType="VARCHAR" />
+    <result column="CCUSTOMERNAME" property="ccustomername" jdbcType="VARCHAR" />
+    <result column="CTEL" property="ctel" jdbcType="VARCHAR" />
+    <result column="CMOBILE" property="cmobile" jdbcType="VARCHAR" />
+    <result column="CLINKMANNAME" property="clinkmanname" jdbcType="VARCHAR" />
+    <result column="CLINKMANTEL" property="clinkmantel" jdbcType="VARCHAR" />
+    <result column="CLINKMANMOBILE" property="clinkmanmobile" jdbcType="VARCHAR" />
+    <result column="CVIN" property="cvin" jdbcType="VARCHAR" />
+    <result column="CLICENCETAG" property="clicencetag" jdbcType="VARCHAR" />
+    <result column="CPOSTNO" property="cpostno" jdbcType="CHAR" />
+    <result column="CENGINENO" property="cengineno" jdbcType="VARCHAR" />
+    <result column="CRADIOPWD" property="cradiopwd" jdbcType="VARCHAR" />
+    <result column="DLICENCEDATE" property="dlicencedate" jdbcType="VARCHAR" />
+    <result column="CPRODUCTCODE" property="cproductcode" jdbcType="VARCHAR" />
+    <result column="CLINKMANADDRESS" property="clinkmanaddress" jdbcType="VARCHAR" />
+    <result column="CLINKMANPOSTNO" property="clinkmanpostno" jdbcType="VARCHAR" />
+    <result column="NLINKMANPROVINCEID" property="nlinkmanprovinceid" jdbcType="INTEGER" />
+    <result column="NLINKMANCITYID" property="nlinkmancityid" jdbcType="INTEGER" />
+    <result column="CVEHICLETYPECODE" property="cvehicletypecode" jdbcType="VARCHAR" />
+    <result column="CVEHICLENAME" property="cvehiclename" jdbcType="VARCHAR" />
+    <result column="CCUSTOMERADDRESS" property="ccustomeraddress" jdbcType="VARCHAR" />
+    <result column="CWASHCARCODE" property="cwashcarcode" jdbcType="CHAR" />
+    <result column="DSALEDATE" property="dsaledate" jdbcType="DATE" />
+    <result column="DNEXTBYDATE" property="dnextbydate" jdbcType="DATE" />
+    <result column="NNEXTBYMILES" property="nnextbymiles" jdbcType="DOUBLE" />
+    <result column="CPDIS" property="cpdis" jdbcType="CHAR" />
+    <result column="COUTSERVICEFLAG" property="coutserviceflag" jdbcType="CHAR" />
+    <result column="CREVOKEFLAG" property="crevokeflag" jdbcType="CHAR" />
+    <result column="CONTIMEFLAG" property="contimeflag" jdbcType="CHAR" />
+    <result column="CFEEFORESEEFLAG" property="cfeeforeseeflag" jdbcType="CHAR" />
+    <result column="DFIRSTPRINTDATE" property="dfirstprintdate" jdbcType="VARCHAR" />
+    <result column="NPRINTPERSONID" property="nprintpersonid" jdbcType="INTEGER" />
+    <result column="DWTSFIRSTPRINTDATE" property="dwtsfirstprintdate" jdbcType="VARCHAR" />
+    <result column="NWTSPRINTPERSONID" property="nwtsprintpersonid" jdbcType="INTEGER" />
+    <result column="CDIAGNOSENOPASSFLAG" property="cdiagnosenopassflag" jdbcType="CHAR" />
+    <result column="CITEMADDFLAG" property="citemaddflag" jdbcType="CHAR" />
+    <result column="CITEMDELFLAG" property="citemdelflag" jdbcType="CHAR" />
+    <result column="CITEMUPDFLAG" property="citemupdflag" jdbcType="CHAR" />
+    <result column="CBJADDFLAG" property="cbjaddflag" jdbcType="CHAR" />
+    <result column="CBJDELFLAG" property="cbjdelflag" jdbcType="CHAR" />
+    <result column="CBJUPDFLAG" property="cbjupdflag" jdbcType="CHAR" />
+    <result column="CWTSSECONDPRINTFLAG" property="cwtssecondprintflag" jdbcType="CHAR" />
+    <result column="NTRAFFICSUBSIDY" property="ntrafficsubsidy" jdbcType="DOUBLE" />
+    <result column="CTRAFFICCARFLAG" property="ctrafficcarflag" jdbcType="CHAR" />
+    <result column="CROADTRIDE" property="croadtride" jdbcType="CHAR" />
+    <result column="CSPBJNOCLM" property="cspbjnoclm" jdbcType="CHAR" />
+    <result column="CCHANGEORSCRAPFLAG" property="cchangeorscrapflag" jdbcType="CHAR" />
+    <result column="NADVISORID" property="nadvisorid" jdbcType="INTEGER" />
+    <result column="CUPLOADFLAG" property="cuploadflag" jdbcType="CHAR" />
+    <result column="CUPLOADDATE" property="cuploaddate" jdbcType="VARCHAR" />
+    <result column="COTOCODE" property="cotocode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, NDEALERID, NBRANCHID, CSERVICEREQUISITIONNO, NVEHICLEID, CREPAIRSTATUS, DENTERDATE, 
+    DPROMISEFINISHDATE, CFASTREPAIRFLAG, NOPERATORID, NSERVICECONSULTANTID, CCONTRACTWORKMODE, 
+    CPARKINGPOSITION, NMILEAGE, DFIRSTCHECKOUTDATE, DCHECKDATE, NEXAMINEID, NCHECKERID, 
+    NCHECKBILLID, NCONTRACTID, CCREDENTIALS, COWEFLAG, NMANHAUR, NSTANDARDRATIONID, NMATECOST, 
+    NEFFECTIVEMANHAUR, CACROSSCURRENTPERIODFLAG, NRESCUEEXPEN, NCONTRACTEXPEN, CPROBLEMSETTLEFLAG, 
+    CMALFUNCTIONDESCRIPTION, CREMARK, DTSTAMP, NLINKMANID, NRVTIMES, CCUSTOMERCODE, CCUSTOMERNAME, 
+    CTEL, CMOBILE, CLINKMANNAME, CLINKMANTEL, CLINKMANMOBILE, CVIN, CLICENCETAG, CPOSTNO, 
+    CENGINENO, CRADIOPWD, DLICENCEDATE, CPRODUCTCODE, CLINKMANADDRESS, CLINKMANPOSTNO, 
+    NLINKMANPROVINCEID, NLINKMANCITYID, CVEHICLETYPECODE, CVEHICLENAME, CCUSTOMERADDRESS, 
+    CWASHCARCODE, DSALEDATE, DNEXTBYDATE, NNEXTBYMILES, CPDIS, COUTSERVICEFLAG, CREVOKEFLAG, 
+    CONTIMEFLAG, CFEEFORESEEFLAG, DFIRSTPRINTDATE, NPRINTPERSONID, DWTSFIRSTPRINTDATE, 
+    NWTSPRINTPERSONID, CDIAGNOSENOPASSFLAG, CITEMADDFLAG, CITEMDELFLAG, CITEMUPDFLAG, 
+    CBJADDFLAG, CBJDELFLAG, CBJUPDFLAG, CWTSSECONDPRINTFLAG, NTRAFFICSUBSIDY, CTRAFFICCARFLAG, 
+    CROADTRIDE, CSPBJNOCLM, CCHANGEORSCRAPFLAG, NADVISORID, CUPLOADFLAG, CUPLOADDATE, 
+    COTOCODE
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dsvcb20c
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="getAllBill" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from dsvcb20c
+  </select>
+  <delete id="deleteById" parameterType="java.lang.String">
+    delete from dsvcb20c where id = #{id}
+  </delete>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dsvcb20c
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="saveMain" parameterType="com.fawcar.afterservice.entity.DeputeBill">
+    insert into dsvcb20c (ID, NDEALERID, NBRANCHID,
+      CSERVICEREQUISITIONNO, NVEHICLEID, CREPAIRSTATUS,CMALFUNCTIONDESCRIPTION)
+      values (#{id,jdbcType=VARCHAR}, #{ndealerid,jdbcType=VARCHAR}, #{nbranchid,jdbcType=VARCHAR},
+      #{cservicerequisitionno,jdbcType=VARCHAR}, #{nvehicleid,jdbcType=VARCHAR},
+      #{crepairstatus,jdbcType=CHAR}, #{cmalfunctiondescription,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insert" parameterType="com.fawcar.afterservice.entity.DeputeBill" >
+    insert into dsvcb20c (ID, NDEALERID, NBRANCHID, 
+      CSERVICEREQUISITIONNO, NVEHICLEID, CREPAIRSTATUS, 
+      DENTERDATE, DPROMISEFINISHDATE, CFASTREPAIRFLAG, 
+      NOPERATORID, NSERVICECONSULTANTID, CCONTRACTWORKMODE, 
+      CPARKINGPOSITION, NMILEAGE, DFIRSTCHECKOUTDATE, 
+      DCHECKDATE, NEXAMINEID, NCHECKERID, 
+      NCHECKBILLID, NCONTRACTID, CCREDENTIALS, 
+      COWEFLAG, NMANHAUR, NSTANDARDRATIONID, 
+      NMATECOST, NEFFECTIVEMANHAUR, CACROSSCURRENTPERIODFLAG, 
+      NRESCUEEXPEN, NCONTRACTEXPEN, CPROBLEMSETTLEFLAG, 
+      CMALFUNCTIONDESCRIPTION, CREMARK, DTSTAMP, 
+      NLINKMANID, NRVTIMES, CCUSTOMERCODE, 
+      CCUSTOMERNAME, CTEL, CMOBILE, 
+      CLINKMANNAME, CLINKMANTEL, CLINKMANMOBILE, 
+      CVIN, CLICENCETAG, CPOSTNO, 
+      CENGINENO, CRADIOPWD, DLICENCEDATE, 
+      CPRODUCTCODE, CLINKMANADDRESS, CLINKMANPOSTNO, 
+      NLINKMANPROVINCEID, NLINKMANCITYID, CVEHICLETYPECODE, 
+      CVEHICLENAME, CCUSTOMERADDRESS, CWASHCARCODE, 
+      DSALEDATE, DNEXTBYDATE, NNEXTBYMILES, 
+      CPDIS, COUTSERVICEFLAG, CREVOKEFLAG, 
+      CONTIMEFLAG, CFEEFORESEEFLAG, DFIRSTPRINTDATE, 
+      NPRINTPERSONID, DWTSFIRSTPRINTDATE, NWTSPRINTPERSONID, 
+      CDIAGNOSENOPASSFLAG, CITEMADDFLAG, CITEMDELFLAG, 
+      CITEMUPDFLAG, CBJADDFLAG, CBJDELFLAG, 
+      CBJUPDFLAG, CWTSSECONDPRINTFLAG, NTRAFFICSUBSIDY, 
+      CTRAFFICCARFLAG, CROADTRIDE, CSPBJNOCLM, 
+      CCHANGEORSCRAPFLAG, NADVISORID, CUPLOADFLAG, 
+      CUPLOADDATE, COTOCODE)
+    values (#{id,jdbcType=VARCHAR}, #{ndealerid,jdbcType=VARCHAR}, #{nbranchid,jdbcType=VARCHAR}, 
+      #{cservicerequisitionno,jdbcType=VARCHAR}, #{nvehicleid,jdbcType=VARCHAR}, #{crepairstatus,jdbcType=CHAR}, 
+      #{denterdate,jdbcType=DATE}, #{dpromisefinishdate,jdbcType=DATE}, #{cfastrepairflag,jdbcType=CHAR}, 
+      #{noperatorid,jdbcType=INTEGER}, #{nserviceconsultantid,jdbcType=INTEGER}, #{ccontractworkmode,jdbcType=CHAR}, 
+      #{cparkingposition,jdbcType=VARCHAR}, #{nmileage,jdbcType=INTEGER}, #{dfirstcheckoutdate,jdbcType=VARCHAR}, 
+      #{dcheckdate,jdbcType=VARCHAR}, #{nexamineid,jdbcType=INTEGER}, #{ncheckerid,jdbcType=INTEGER}, 
+      #{ncheckbillid,jdbcType=INTEGER}, #{ncontractid,jdbcType=INTEGER}, #{ccredentials,jdbcType=VARCHAR}, 
+      #{coweflag,jdbcType=CHAR}, #{nmanhaur,jdbcType=DOUBLE}, #{nstandardrationid,jdbcType=INTEGER}, 
+      #{nmatecost,jdbcType=DOUBLE}, #{neffectivemanhaur,jdbcType=DOUBLE}, #{cacrosscurrentperiodflag,jdbcType=CHAR}, 
+      #{nrescueexpen,jdbcType=DOUBLE}, #{ncontractexpen,jdbcType=DOUBLE}, #{cproblemsettleflag,jdbcType=CHAR}, 
+      #{cmalfunctiondescription,jdbcType=VARCHAR}, #{cremark,jdbcType=VARCHAR}, #{dtstamp,jdbcType=TIMESTAMP}, 
+      #{nlinkmanid,jdbcType=INTEGER}, #{nrvtimes,jdbcType=INTEGER}, #{ccustomercode,jdbcType=VARCHAR}, 
+      #{ccustomername,jdbcType=VARCHAR}, #{ctel,jdbcType=VARCHAR}, #{cmobile,jdbcType=VARCHAR}, 
+      #{clinkmanname,jdbcType=VARCHAR}, #{clinkmantel,jdbcType=VARCHAR}, #{clinkmanmobile,jdbcType=VARCHAR}, 
+      #{cvin,jdbcType=VARCHAR}, #{clicencetag,jdbcType=VARCHAR}, #{cpostno,jdbcType=CHAR}, 
+      #{cengineno,jdbcType=VARCHAR}, #{cradiopwd,jdbcType=VARCHAR}, #{dlicencedate,jdbcType=VARCHAR}, 
+      #{cproductcode,jdbcType=VARCHAR}, #{clinkmanaddress,jdbcType=VARCHAR}, #{clinkmanpostno,jdbcType=VARCHAR}, 
+      #{nlinkmanprovinceid,jdbcType=INTEGER}, #{nlinkmancityid,jdbcType=INTEGER}, #{cvehicletypecode,jdbcType=VARCHAR}, 
+      #{cvehiclename,jdbcType=VARCHAR}, #{ccustomeraddress,jdbcType=VARCHAR}, #{cwashcarcode,jdbcType=CHAR}, 
+      #{dsaledate,jdbcType=DATE}, #{dnextbydate,jdbcType=DATE}, #{nnextbymiles,jdbcType=DOUBLE}, 
+      #{cpdis,jdbcType=CHAR}, #{coutserviceflag,jdbcType=CHAR}, #{crevokeflag,jdbcType=CHAR}, 
+      #{contimeflag,jdbcType=CHAR}, #{cfeeforeseeflag,jdbcType=CHAR}, #{dfirstprintdate,jdbcType=VARCHAR}, 
+      #{nprintpersonid,jdbcType=INTEGER}, #{dwtsfirstprintdate,jdbcType=VARCHAR}, #{nwtsprintpersonid,jdbcType=INTEGER}, 
+      #{cdiagnosenopassflag,jdbcType=CHAR}, #{citemaddflag,jdbcType=CHAR}, #{citemdelflag,jdbcType=CHAR}, 
+      #{citemupdflag,jdbcType=CHAR}, #{cbjaddflag,jdbcType=CHAR}, #{cbjdelflag,jdbcType=CHAR}, 
+      #{cbjupdflag,jdbcType=CHAR}, #{cwtssecondprintflag,jdbcType=CHAR}, #{ntrafficsubsidy,jdbcType=DOUBLE}, 
+      #{ctrafficcarflag,jdbcType=CHAR}, #{croadtride,jdbcType=CHAR}, #{cspbjnoclm,jdbcType=CHAR}, 
+      #{cchangeorscrapflag,jdbcType=CHAR}, #{nadvisorid,jdbcType=INTEGER}, #{cuploadflag,jdbcType=CHAR}, 
+      #{cuploaddate,jdbcType=VARCHAR}, #{cotocode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fawcar.afterservice.entity.DeputeBill" >
+    insert into dsvcb20c
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="ndealerid != null" >
+        NDEALERID,
+      </if>
+      <if test="nbranchid != null" >
+        NBRANCHID,
+      </if>
+      <if test="cservicerequisitionno != null" >
+        CSERVICEREQUISITIONNO,
+      </if>
+      <if test="nvehicleid != null" >
+        NVEHICLEID,
+      </if>
+      <if test="crepairstatus != null" >
+        CREPAIRSTATUS,
+      </if>
+      <if test="denterdate != null" >
+        DENTERDATE,
+      </if>
+      <if test="dpromisefinishdate != null" >
+        DPROMISEFINISHDATE,
+      </if>
+      <if test="cfastrepairflag != null" >
+        CFASTREPAIRFLAG,
+      </if>
+      <if test="noperatorid != null" >
+        NOPERATORID,
+      </if>
+      <if test="nserviceconsultantid != null" >
+        NSERVICECONSULTANTID,
+      </if>
+      <if test="ccontractworkmode != null" >
+        CCONTRACTWORKMODE,
+      </if>
+      <if test="cparkingposition != null" >
+        CPARKINGPOSITION,
+      </if>
+      <if test="nmileage != null" >
+        NMILEAGE,
+      </if>
+      <if test="dfirstcheckoutdate != null" >
+        DFIRSTCHECKOUTDATE,
+      </if>
+      <if test="dcheckdate != null" >
+        DCHECKDATE,
+      </if>
+      <if test="nexamineid != null" >
+        NEXAMINEID,
+      </if>
+      <if test="ncheckerid != null" >
+        NCHECKERID,
+      </if>
+      <if test="ncheckbillid != null" >
+        NCHECKBILLID,
+      </if>
+      <if test="ncontractid != null" >
+        NCONTRACTID,
+      </if>
+      <if test="ccredentials != null" >
+        CCREDENTIALS,
+      </if>
+      <if test="coweflag != null" >
+        COWEFLAG,
+      </if>
+      <if test="nmanhaur != null" >
+        NMANHAUR,
+      </if>
+      <if test="nstandardrationid != null" >
+        NSTANDARDRATIONID,
+      </if>
+      <if test="nmatecost != null" >
+        NMATECOST,
+      </if>
+      <if test="neffectivemanhaur != null" >
+        NEFFECTIVEMANHAUR,
+      </if>
+      <if test="cacrosscurrentperiodflag != null" >
+        CACROSSCURRENTPERIODFLAG,
+      </if>
+      <if test="nrescueexpen != null" >
+        NRESCUEEXPEN,
+      </if>
+      <if test="ncontractexpen != null" >
+        NCONTRACTEXPEN,
+      </if>
+      <if test="cproblemsettleflag != null" >
+        CPROBLEMSETTLEFLAG,
+      </if>
+      <if test="cmalfunctiondescription != null" >
+        CMALFUNCTIONDESCRIPTION,
+      </if>
+      <if test="cremark != null" >
+        CREMARK,
+      </if>
+      <if test="dtstamp != null" >
+        DTSTAMP,
+      </if>
+      <if test="nlinkmanid != null" >
+        NLINKMANID,
+      </if>
+      <if test="nrvtimes != null" >
+        NRVTIMES,
+      </if>
+      <if test="ccustomercode != null" >
+        CCUSTOMERCODE,
+      </if>
+      <if test="ccustomername != null" >
+        CCUSTOMERNAME,
+      </if>
+      <if test="ctel != null" >
+        CTEL,
+      </if>
+      <if test="cmobile != null" >
+        CMOBILE,
+      </if>
+      <if test="clinkmanname != null" >
+        CLINKMANNAME,
+      </if>
+      <if test="clinkmantel != null" >
+        CLINKMANTEL,
+      </if>
+      <if test="clinkmanmobile != null" >
+        CLINKMANMOBILE,
+      </if>
+      <if test="cvin != null" >
+        CVIN,
+      </if>
+      <if test="clicencetag != null" >
+        CLICENCETAG,
+      </if>
+      <if test="cpostno != null" >
+        CPOSTNO,
+      </if>
+      <if test="cengineno != null" >
+        CENGINENO,
+      </if>
+      <if test="cradiopwd != null" >
+        CRADIOPWD,
+      </if>
+      <if test="dlicencedate != null" >
+        DLICENCEDATE,
+      </if>
+      <if test="cproductcode != null" >
+        CPRODUCTCODE,
+      </if>
+      <if test="clinkmanaddress != null" >
+        CLINKMANADDRESS,
+      </if>
+      <if test="clinkmanpostno != null" >
+        CLINKMANPOSTNO,
+      </if>
+      <if test="nlinkmanprovinceid != null" >
+        NLINKMANPROVINCEID,
+      </if>
+      <if test="nlinkmancityid != null" >
+        NLINKMANCITYID,
+      </if>
+      <if test="cvehicletypecode != null" >
+        CVEHICLETYPECODE,
+      </if>
+      <if test="cvehiclename != null" >
+        CVEHICLENAME,
+      </if>
+      <if test="ccustomeraddress != null" >
+        CCUSTOMERADDRESS,
+      </if>
+      <if test="cwashcarcode != null" >
+        CWASHCARCODE,
+      </if>
+      <if test="dsaledate != null" >
+        DSALEDATE,
+      </if>
+      <if test="dnextbydate != null" >
+        DNEXTBYDATE,
+      </if>
+      <if test="nnextbymiles != null" >
+        NNEXTBYMILES,
+      </if>
+      <if test="cpdis != null" >
+        CPDIS,
+      </if>
+      <if test="coutserviceflag != null" >
+        COUTSERVICEFLAG,
+      </if>
+      <if test="crevokeflag != null" >
+        CREVOKEFLAG,
+      </if>
+      <if test="contimeflag != null" >
+        CONTIMEFLAG,
+      </if>
+      <if test="cfeeforeseeflag != null" >
+        CFEEFORESEEFLAG,
+      </if>
+      <if test="dfirstprintdate != null" >
+        DFIRSTPRINTDATE,
+      </if>
+      <if test="nprintpersonid != null" >
+        NPRINTPERSONID,
+      </if>
+      <if test="dwtsfirstprintdate != null" >
+        DWTSFIRSTPRINTDATE,
+      </if>
+      <if test="nwtsprintpersonid != null" >
+        NWTSPRINTPERSONID,
+      </if>
+      <if test="cdiagnosenopassflag != null" >
+        CDIAGNOSENOPASSFLAG,
+      </if>
+      <if test="citemaddflag != null" >
+        CITEMADDFLAG,
+      </if>
+      <if test="citemdelflag != null" >
+        CITEMDELFLAG,
+      </if>
+      <if test="citemupdflag != null" >
+        CITEMUPDFLAG,
+      </if>
+      <if test="cbjaddflag != null" >
+        CBJADDFLAG,
+      </if>
+      <if test="cbjdelflag != null" >
+        CBJDELFLAG,
+      </if>
+      <if test="cbjupdflag != null" >
+        CBJUPDFLAG,
+      </if>
+      <if test="cwtssecondprintflag != null" >
+        CWTSSECONDPRINTFLAG,
+      </if>
+      <if test="ntrafficsubsidy != null" >
+        NTRAFFICSUBSIDY,
+      </if>
+      <if test="ctrafficcarflag != null" >
+        CTRAFFICCARFLAG,
+      </if>
+      <if test="croadtride != null" >
+        CROADTRIDE,
+      </if>
+      <if test="cspbjnoclm != null" >
+        CSPBJNOCLM,
+      </if>
+      <if test="cchangeorscrapflag != null" >
+        CCHANGEORSCRAPFLAG,
+      </if>
+      <if test="nadvisorid != null" >
+        NADVISORID,
+      </if>
+      <if test="cuploadflag != null" >
+        CUPLOADFLAG,
+      </if>
+      <if test="cuploaddate != null" >
+        CUPLOADDATE,
+      </if>
+      <if test="cotocode != null" >
+        COTOCODE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="ndealerid != null" >
+        #{ndealerid,jdbcType=VARCHAR},
+      </if>
+      <if test="nbranchid != null" >
+        #{nbranchid,jdbcType=VARCHAR},
+      </if>
+      <if test="cservicerequisitionno != null" >
+        #{cservicerequisitionno,jdbcType=VARCHAR},
+      </if>
+      <if test="nvehicleid != null" >
+        #{nvehicleid,jdbcType=VARCHAR},
+      </if>
+      <if test="crepairstatus != null" >
+        #{crepairstatus,jdbcType=CHAR},
+      </if>
+      <if test="denterdate != null" >
+        #{denterdate,jdbcType=DATE},
+      </if>
+      <if test="dpromisefinishdate != null" >
+        #{dpromisefinishdate,jdbcType=DATE},
+      </if>
+      <if test="cfastrepairflag != null" >
+        #{cfastrepairflag,jdbcType=CHAR},
+      </if>
+      <if test="noperatorid != null" >
+        #{noperatorid,jdbcType=INTEGER},
+      </if>
+      <if test="nserviceconsultantid != null" >
+        #{nserviceconsultantid,jdbcType=INTEGER},
+      </if>
+      <if test="ccontractworkmode != null" >
+        #{ccontractworkmode,jdbcType=CHAR},
+      </if>
+      <if test="cparkingposition != null" >
+        #{cparkingposition,jdbcType=VARCHAR},
+      </if>
+      <if test="nmileage != null" >
+        #{nmileage,jdbcType=INTEGER},
+      </if>
+      <if test="dfirstcheckoutdate != null" >
+        #{dfirstcheckoutdate,jdbcType=VARCHAR},
+      </if>
+      <if test="dcheckdate != null" >
+        #{dcheckdate,jdbcType=VARCHAR},
+      </if>
+      <if test="nexamineid != null" >
+        #{nexamineid,jdbcType=INTEGER},
+      </if>
+      <if test="ncheckerid != null" >
+        #{ncheckerid,jdbcType=INTEGER},
+      </if>
+      <if test="ncheckbillid != null" >
+        #{ncheckbillid,jdbcType=INTEGER},
+      </if>
+      <if test="ncontractid != null" >
+        #{ncontractid,jdbcType=INTEGER},
+      </if>
+      <if test="ccredentials != null" >
+        #{ccredentials,jdbcType=VARCHAR},
+      </if>
+      <if test="coweflag != null" >
+        #{coweflag,jdbcType=CHAR},
+      </if>
+      <if test="nmanhaur != null" >
+        #{nmanhaur,jdbcType=DOUBLE},
+      </if>
+      <if test="nstandardrationid != null" >
+        #{nstandardrationid,jdbcType=INTEGER},
+      </if>
+      <if test="nmatecost != null" >
+        #{nmatecost,jdbcType=DOUBLE},
+      </if>
+      <if test="neffectivemanhaur != null" >
+        #{neffectivemanhaur,jdbcType=DOUBLE},
+      </if>
+      <if test="cacrosscurrentperiodflag != null" >
+        #{cacrosscurrentperiodflag,jdbcType=CHAR},
+      </if>
+      <if test="nrescueexpen != null" >
+        #{nrescueexpen,jdbcType=DOUBLE},
+      </if>
+      <if test="ncontractexpen != null" >
+        #{ncontractexpen,jdbcType=DOUBLE},
+      </if>
+      <if test="cproblemsettleflag != null" >
+        #{cproblemsettleflag,jdbcType=CHAR},
+      </if>
+      <if test="cmalfunctiondescription != null" >
+        #{cmalfunctiondescription,jdbcType=VARCHAR},
+      </if>
+      <if test="cremark != null" >
+        #{cremark,jdbcType=VARCHAR},
+      </if>
+      <if test="dtstamp != null" >
+        #{dtstamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nlinkmanid != null" >
+        #{nlinkmanid,jdbcType=INTEGER},
+      </if>
+      <if test="nrvtimes != null" >
+        #{nrvtimes,jdbcType=INTEGER},
+      </if>
+      <if test="ccustomercode != null" >
+        #{ccustomercode,jdbcType=VARCHAR},
+      </if>
+      <if test="ccustomername != null" >
+        #{ccustomername,jdbcType=VARCHAR},
+      </if>
+      <if test="ctel != null" >
+        #{ctel,jdbcType=VARCHAR},
+      </if>
+      <if test="cmobile != null" >
+        #{cmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmanname != null" >
+        #{clinkmanname,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmantel != null" >
+        #{clinkmantel,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmanmobile != null" >
+        #{clinkmanmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="cvin != null" >
+        #{cvin,jdbcType=VARCHAR},
+      </if>
+      <if test="clicencetag != null" >
+        #{clicencetag,jdbcType=VARCHAR},
+      </if>
+      <if test="cpostno != null" >
+        #{cpostno,jdbcType=CHAR},
+      </if>
+      <if test="cengineno != null" >
+        #{cengineno,jdbcType=VARCHAR},
+      </if>
+      <if test="cradiopwd != null" >
+        #{cradiopwd,jdbcType=VARCHAR},
+      </if>
+      <if test="dlicencedate != null" >
+        #{dlicencedate,jdbcType=VARCHAR},
+      </if>
+      <if test="cproductcode != null" >
+        #{cproductcode,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmanaddress != null" >
+        #{clinkmanaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmanpostno != null" >
+        #{clinkmanpostno,jdbcType=VARCHAR},
+      </if>
+      <if test="nlinkmanprovinceid != null" >
+        #{nlinkmanprovinceid,jdbcType=INTEGER},
+      </if>
+      <if test="nlinkmancityid != null" >
+        #{nlinkmancityid,jdbcType=INTEGER},
+      </if>
+      <if test="cvehicletypecode != null" >
+        #{cvehicletypecode,jdbcType=VARCHAR},
+      </if>
+      <if test="cvehiclename != null" >
+        #{cvehiclename,jdbcType=VARCHAR},
+      </if>
+      <if test="ccustomeraddress != null" >
+        #{ccustomeraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cwashcarcode != null" >
+        #{cwashcarcode,jdbcType=CHAR},
+      </if>
+      <if test="dsaledate != null" >
+        #{dsaledate,jdbcType=DATE},
+      </if>
+      <if test="dnextbydate != null" >
+        #{dnextbydate,jdbcType=DATE},
+      </if>
+      <if test="nnextbymiles != null" >
+        #{nnextbymiles,jdbcType=DOUBLE},
+      </if>
+      <if test="cpdis != null" >
+        #{cpdis,jdbcType=CHAR},
+      </if>
+      <if test="coutserviceflag != null" >
+        #{coutserviceflag,jdbcType=CHAR},
+      </if>
+      <if test="crevokeflag != null" >
+        #{crevokeflag,jdbcType=CHAR},
+      </if>
+      <if test="contimeflag != null" >
+        #{contimeflag,jdbcType=CHAR},
+      </if>
+      <if test="cfeeforeseeflag != null" >
+        #{cfeeforeseeflag,jdbcType=CHAR},
+      </if>
+      <if test="dfirstprintdate != null" >
+        #{dfirstprintdate,jdbcType=VARCHAR},
+      </if>
+      <if test="nprintpersonid != null" >
+        #{nprintpersonid,jdbcType=INTEGER},
+      </if>
+      <if test="dwtsfirstprintdate != null" >
+        #{dwtsfirstprintdate,jdbcType=VARCHAR},
+      </if>
+      <if test="nwtsprintpersonid != null" >
+        #{nwtsprintpersonid,jdbcType=INTEGER},
+      </if>
+      <if test="cdiagnosenopassflag != null" >
+        #{cdiagnosenopassflag,jdbcType=CHAR},
+      </if>
+      <if test="citemaddflag != null" >
+        #{citemaddflag,jdbcType=CHAR},
+      </if>
+      <if test="citemdelflag != null" >
+        #{citemdelflag,jdbcType=CHAR},
+      </if>
+      <if test="citemupdflag != null" >
+        #{citemupdflag,jdbcType=CHAR},
+      </if>
+      <if test="cbjaddflag != null" >
+        #{cbjaddflag,jdbcType=CHAR},
+      </if>
+      <if test="cbjdelflag != null" >
+        #{cbjdelflag,jdbcType=CHAR},
+      </if>
+      <if test="cbjupdflag != null" >
+        #{cbjupdflag,jdbcType=CHAR},
+      </if>
+      <if test="cwtssecondprintflag != null" >
+        #{cwtssecondprintflag,jdbcType=CHAR},
+      </if>
+      <if test="ntrafficsubsidy != null" >
+        #{ntrafficsubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="ctrafficcarflag != null" >
+        #{ctrafficcarflag,jdbcType=CHAR},
+      </if>
+      <if test="croadtride != null" >
+        #{croadtride,jdbcType=CHAR},
+      </if>
+      <if test="cspbjnoclm != null" >
+        #{cspbjnoclm,jdbcType=CHAR},
+      </if>
+      <if test="cchangeorscrapflag != null" >
+        #{cchangeorscrapflag,jdbcType=CHAR},
+      </if>
+      <if test="nadvisorid != null" >
+        #{nadvisorid,jdbcType=INTEGER},
+      </if>
+      <if test="cuploadflag != null" >
+        #{cuploadflag,jdbcType=CHAR},
+      </if>
+      <if test="cuploaddate != null" >
+        #{cuploaddate,jdbcType=VARCHAR},
+      </if>
+      <if test="cotocode != null" >
+        #{cotocode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fawcar.afterservice.entity.DeputeBill" >
+    update dsvcb20c
+    <set >
+      <if test="ndealerid != null" >
+        NDEALERID = #{ndealerid,jdbcType=VARCHAR},
+      </if>
+      <if test="nbranchid != null" >
+        NBRANCHID = #{nbranchid,jdbcType=VARCHAR},
+      </if>
+      <if test="cservicerequisitionno != null" >
+        CSERVICEREQUISITIONNO = #{cservicerequisitionno,jdbcType=VARCHAR},
+      </if>
+      <if test="nvehicleid != null" >
+        NVEHICLEID = #{nvehicleid,jdbcType=VARCHAR},
+      </if>
+      <if test="crepairstatus != null" >
+        CREPAIRSTATUS = #{crepairstatus,jdbcType=CHAR},
+      </if>
+      <if test="denterdate != null" >
+        DENTERDATE = #{denterdate,jdbcType=DATE},
+      </if>
+      <if test="dpromisefinishdate != null" >
+        DPROMISEFINISHDATE = #{dpromisefinishdate,jdbcType=DATE},
+      </if>
+      <if test="cfastrepairflag != null" >
+        CFASTREPAIRFLAG = #{cfastrepairflag,jdbcType=CHAR},
+      </if>
+      <if test="noperatorid != null" >
+        NOPERATORID = #{noperatorid,jdbcType=INTEGER},
+      </if>
+      <if test="nserviceconsultantid != null" >
+        NSERVICECONSULTANTID = #{nserviceconsultantid,jdbcType=INTEGER},
+      </if>
+      <if test="ccontractworkmode != null" >
+        CCONTRACTWORKMODE = #{ccontractworkmode,jdbcType=CHAR},
+      </if>
+      <if test="cparkingposition != null" >
+        CPARKINGPOSITION = #{cparkingposition,jdbcType=VARCHAR},
+      </if>
+      <if test="nmileage != null" >
+        NMILEAGE = #{nmileage,jdbcType=INTEGER},
+      </if>
+      <if test="dfirstcheckoutdate != null" >
+        DFIRSTCHECKOUTDATE = #{dfirstcheckoutdate,jdbcType=VARCHAR},
+      </if>
+      <if test="dcheckdate != null" >
+        DCHECKDATE = #{dcheckdate,jdbcType=VARCHAR},
+      </if>
+      <if test="nexamineid != null" >
+        NEXAMINEID = #{nexamineid,jdbcType=INTEGER},
+      </if>
+      <if test="ncheckerid != null" >
+        NCHECKERID = #{ncheckerid,jdbcType=INTEGER},
+      </if>
+      <if test="ncheckbillid != null" >
+        NCHECKBILLID = #{ncheckbillid,jdbcType=INTEGER},
+      </if>
+      <if test="ncontractid != null" >
+        NCONTRACTID = #{ncontractid,jdbcType=INTEGER},
+      </if>
+      <if test="ccredentials != null" >
+        CCREDENTIALS = #{ccredentials,jdbcType=VARCHAR},
+      </if>
+      <if test="coweflag != null" >
+        COWEFLAG = #{coweflag,jdbcType=CHAR},
+      </if>
+      <if test="nmanhaur != null" >
+        NMANHAUR = #{nmanhaur,jdbcType=DOUBLE},
+      </if>
+      <if test="nstandardrationid != null" >
+        NSTANDARDRATIONID = #{nstandardrationid,jdbcType=INTEGER},
+      </if>
+      <if test="nmatecost != null" >
+        NMATECOST = #{nmatecost,jdbcType=DOUBLE},
+      </if>
+      <if test="neffectivemanhaur != null" >
+        NEFFECTIVEMANHAUR = #{neffectivemanhaur,jdbcType=DOUBLE},
+      </if>
+      <if test="cacrosscurrentperiodflag != null" >
+        CACROSSCURRENTPERIODFLAG = #{cacrosscurrentperiodflag,jdbcType=CHAR},
+      </if>
+      <if test="nrescueexpen != null" >
+        NRESCUEEXPEN = #{nrescueexpen,jdbcType=DOUBLE},
+      </if>
+      <if test="ncontractexpen != null" >
+        NCONTRACTEXPEN = #{ncontractexpen,jdbcType=DOUBLE},
+      </if>
+      <if test="cproblemsettleflag != null" >
+        CPROBLEMSETTLEFLAG = #{cproblemsettleflag,jdbcType=CHAR},
+      </if>
+      <if test="cmalfunctiondescription != null" >
+        CMALFUNCTIONDESCRIPTION = #{cmalfunctiondescription,jdbcType=VARCHAR},
+      </if>
+      <if test="cremark != null" >
+        CREMARK = #{cremark,jdbcType=VARCHAR},
+      </if>
+      <if test="dtstamp != null" >
+        DTSTAMP = #{dtstamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nlinkmanid != null" >
+        NLINKMANID = #{nlinkmanid,jdbcType=INTEGER},
+      </if>
+      <if test="nrvtimes != null" >
+        NRVTIMES = #{nrvtimes,jdbcType=INTEGER},
+      </if>
+      <if test="ccustomercode != null" >
+        CCUSTOMERCODE = #{ccustomercode,jdbcType=VARCHAR},
+      </if>
+      <if test="ccustomername != null" >
+        CCUSTOMERNAME = #{ccustomername,jdbcType=VARCHAR},
+      </if>
+      <if test="ctel != null" >
+        CTEL = #{ctel,jdbcType=VARCHAR},
+      </if>
+      <if test="cmobile != null" >
+        CMOBILE = #{cmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmanname != null" >
+        CLINKMANNAME = #{clinkmanname,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmantel != null" >
+        CLINKMANTEL = #{clinkmantel,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmanmobile != null" >
+        CLINKMANMOBILE = #{clinkmanmobile,jdbcType=VARCHAR},
+      </if>
+      <if test="cvin != null" >
+        CVIN = #{cvin,jdbcType=VARCHAR},
+      </if>
+      <if test="clicencetag != null" >
+        CLICENCETAG = #{clicencetag,jdbcType=VARCHAR},
+      </if>
+      <if test="cpostno != null" >
+        CPOSTNO = #{cpostno,jdbcType=CHAR},
+      </if>
+      <if test="cengineno != null" >
+        CENGINENO = #{cengineno,jdbcType=VARCHAR},
+      </if>
+      <if test="cradiopwd != null" >
+        CRADIOPWD = #{cradiopwd,jdbcType=VARCHAR},
+      </if>
+      <if test="dlicencedate != null" >
+        DLICENCEDATE = #{dlicencedate,jdbcType=VARCHAR},
+      </if>
+      <if test="cproductcode != null" >
+        CPRODUCTCODE = #{cproductcode,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmanaddress != null" >
+        CLINKMANADDRESS = #{clinkmanaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="clinkmanpostno != null" >
+        CLINKMANPOSTNO = #{clinkmanpostno,jdbcType=VARCHAR},
+      </if>
+      <if test="nlinkmanprovinceid != null" >
+        NLINKMANPROVINCEID = #{nlinkmanprovinceid,jdbcType=INTEGER},
+      </if>
+      <if test="nlinkmancityid != null" >
+        NLINKMANCITYID = #{nlinkmancityid,jdbcType=INTEGER},
+      </if>
+      <if test="cvehicletypecode != null" >
+        CVEHICLETYPECODE = #{cvehicletypecode,jdbcType=VARCHAR},
+      </if>
+      <if test="cvehiclename != null" >
+        CVEHICLENAME = #{cvehiclename,jdbcType=VARCHAR},
+      </if>
+      <if test="ccustomeraddress != null" >
+        CCUSTOMERADDRESS = #{ccustomeraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cwashcarcode != null" >
+        CWASHCARCODE = #{cwashcarcode,jdbcType=CHAR},
+      </if>
+      <if test="dsaledate != null" >
+        DSALEDATE = #{dsaledate,jdbcType=DATE},
+      </if>
+      <if test="dnextbydate != null" >
+        DNEXTBYDATE = #{dnextbydate,jdbcType=DATE},
+      </if>
+      <if test="nnextbymiles != null" >
+        NNEXTBYMILES = #{nnextbymiles,jdbcType=DOUBLE},
+      </if>
+      <if test="cpdis != null" >
+        CPDIS = #{cpdis,jdbcType=CHAR},
+      </if>
+      <if test="coutserviceflag != null" >
+        COUTSERVICEFLAG = #{coutserviceflag,jdbcType=CHAR},
+      </if>
+      <if test="crevokeflag != null" >
+        CREVOKEFLAG = #{crevokeflag,jdbcType=CHAR},
+      </if>
+      <if test="contimeflag != null" >
+        CONTIMEFLAG = #{contimeflag,jdbcType=CHAR},
+      </if>
+      <if test="cfeeforeseeflag != null" >
+        CFEEFORESEEFLAG = #{cfeeforeseeflag,jdbcType=CHAR},
+      </if>
+      <if test="dfirstprintdate != null" >
+        DFIRSTPRINTDATE = #{dfirstprintdate,jdbcType=VARCHAR},
+      </if>
+      <if test="nprintpersonid != null" >
+        NPRINTPERSONID = #{nprintpersonid,jdbcType=INTEGER},
+      </if>
+      <if test="dwtsfirstprintdate != null" >
+        DWTSFIRSTPRINTDATE = #{dwtsfirstprintdate,jdbcType=VARCHAR},
+      </if>
+      <if test="nwtsprintpersonid != null" >
+        NWTSPRINTPERSONID = #{nwtsprintpersonid,jdbcType=INTEGER},
+      </if>
+      <if test="cdiagnosenopassflag != null" >
+        CDIAGNOSENOPASSFLAG = #{cdiagnosenopassflag,jdbcType=CHAR},
+      </if>
+      <if test="citemaddflag != null" >
+        CITEMADDFLAG = #{citemaddflag,jdbcType=CHAR},
+      </if>
+      <if test="citemdelflag != null" >
+        CITEMDELFLAG = #{citemdelflag,jdbcType=CHAR},
+      </if>
+      <if test="citemupdflag != null" >
+        CITEMUPDFLAG = #{citemupdflag,jdbcType=CHAR},
+      </if>
+      <if test="cbjaddflag != null" >
+        CBJADDFLAG = #{cbjaddflag,jdbcType=CHAR},
+      </if>
+      <if test="cbjdelflag != null" >
+        CBJDELFLAG = #{cbjdelflag,jdbcType=CHAR},
+      </if>
+      <if test="cbjupdflag != null" >
+        CBJUPDFLAG = #{cbjupdflag,jdbcType=CHAR},
+      </if>
+      <if test="cwtssecondprintflag != null" >
+        CWTSSECONDPRINTFLAG = #{cwtssecondprintflag,jdbcType=CHAR},
+      </if>
+      <if test="ntrafficsubsidy != null" >
+        NTRAFFICSUBSIDY = #{ntrafficsubsidy,jdbcType=DOUBLE},
+      </if>
+      <if test="ctrafficcarflag != null" >
+        CTRAFFICCARFLAG = #{ctrafficcarflag,jdbcType=CHAR},
+      </if>
+      <if test="croadtride != null" >
+        CROADTRIDE = #{croadtride,jdbcType=CHAR},
+      </if>
+      <if test="cspbjnoclm != null" >
+        CSPBJNOCLM = #{cspbjnoclm,jdbcType=CHAR},
+      </if>
+      <if test="cchangeorscrapflag != null" >
+        CCHANGEORSCRAPFLAG = #{cchangeorscrapflag,jdbcType=CHAR},
+      </if>
+      <if test="nadvisorid != null" >
+        NADVISORID = #{nadvisorid,jdbcType=INTEGER},
+      </if>
+      <if test="cuploadflag != null" >
+        CUPLOADFLAG = #{cuploadflag,jdbcType=CHAR},
+      </if>
+      <if test="cuploaddate != null" >
+        CUPLOADDATE = #{cuploaddate,jdbcType=VARCHAR},
+      </if>
+      <if test="cotocode != null" >
+        COTOCODE = #{cotocode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fawcar.afterservice.entity.DeputeBill" >
+    update dsvcb20c
+    set NDEALERID = #{ndealerid,jdbcType=VARCHAR},
+      NBRANCHID = #{nbranchid,jdbcType=VARCHAR},
+      CSERVICEREQUISITIONNO = #{cservicerequisitionno,jdbcType=VARCHAR},
+      NVEHICLEID = #{nvehicleid,jdbcType=VARCHAR},
+      CREPAIRSTATUS = #{crepairstatus,jdbcType=CHAR},
+      DENTERDATE = #{denterdate,jdbcType=DATE},
+      DPROMISEFINISHDATE = #{dpromisefinishdate,jdbcType=DATE},
+      CFASTREPAIRFLAG = #{cfastrepairflag,jdbcType=CHAR},
+      NOPERATORID = #{noperatorid,jdbcType=INTEGER},
+      NSERVICECONSULTANTID = #{nserviceconsultantid,jdbcType=INTEGER},
+      CCONTRACTWORKMODE = #{ccontractworkmode,jdbcType=CHAR},
+      CPARKINGPOSITION = #{cparkingposition,jdbcType=VARCHAR},
+      NMILEAGE = #{nmileage,jdbcType=INTEGER},
+      DFIRSTCHECKOUTDATE = #{dfirstcheckoutdate,jdbcType=VARCHAR},
+      DCHECKDATE = #{dcheckdate,jdbcType=VARCHAR},
+      NEXAMINEID = #{nexamineid,jdbcType=INTEGER},
+      NCHECKERID = #{ncheckerid,jdbcType=INTEGER},
+      NCHECKBILLID = #{ncheckbillid,jdbcType=INTEGER},
+      NCONTRACTID = #{ncontractid,jdbcType=INTEGER},
+      CCREDENTIALS = #{ccredentials,jdbcType=VARCHAR},
+      COWEFLAG = #{coweflag,jdbcType=CHAR},
+      NMANHAUR = #{nmanhaur,jdbcType=DOUBLE},
+      NSTANDARDRATIONID = #{nstandardrationid,jdbcType=INTEGER},
+      NMATECOST = #{nmatecost,jdbcType=DOUBLE},
+      NEFFECTIVEMANHAUR = #{neffectivemanhaur,jdbcType=DOUBLE},
+      CACROSSCURRENTPERIODFLAG = #{cacrosscurrentperiodflag,jdbcType=CHAR},
+      NRESCUEEXPEN = #{nrescueexpen,jdbcType=DOUBLE},
+      NCONTRACTEXPEN = #{ncontractexpen,jdbcType=DOUBLE},
+      CPROBLEMSETTLEFLAG = #{cproblemsettleflag,jdbcType=CHAR},
+      CMALFUNCTIONDESCRIPTION = #{cmalfunctiondescription,jdbcType=VARCHAR},
+      CREMARK = #{cremark,jdbcType=VARCHAR},
+      DTSTAMP = #{dtstamp,jdbcType=TIMESTAMP},
+      NLINKMANID = #{nlinkmanid,jdbcType=INTEGER},
+      NRVTIMES = #{nrvtimes,jdbcType=INTEGER},
+      CCUSTOMERCODE = #{ccustomercode,jdbcType=VARCHAR},
+      CCUSTOMERNAME = #{ccustomername,jdbcType=VARCHAR},
+      CTEL = #{ctel,jdbcType=VARCHAR},
+      CMOBILE = #{cmobile,jdbcType=VARCHAR},
+      CLINKMANNAME = #{clinkmanname,jdbcType=VARCHAR},
+      CLINKMANTEL = #{clinkmantel,jdbcType=VARCHAR},
+      CLINKMANMOBILE = #{clinkmanmobile,jdbcType=VARCHAR},
+      CVIN = #{cvin,jdbcType=VARCHAR},
+      CLICENCETAG = #{clicencetag,jdbcType=VARCHAR},
+      CPOSTNO = #{cpostno,jdbcType=CHAR},
+      CENGINENO = #{cengineno,jdbcType=VARCHAR},
+      CRADIOPWD = #{cradiopwd,jdbcType=VARCHAR},
+      DLICENCEDATE = #{dlicencedate,jdbcType=VARCHAR},
+      CPRODUCTCODE = #{cproductcode,jdbcType=VARCHAR},
+      CLINKMANADDRESS = #{clinkmanaddress,jdbcType=VARCHAR},
+      CLINKMANPOSTNO = #{clinkmanpostno,jdbcType=VARCHAR},
+      NLINKMANPROVINCEID = #{nlinkmanprovinceid,jdbcType=INTEGER},
+      NLINKMANCITYID = #{nlinkmancityid,jdbcType=INTEGER},
+      CVEHICLETYPECODE = #{cvehicletypecode,jdbcType=VARCHAR},
+      CVEHICLENAME = #{cvehiclename,jdbcType=VARCHAR},
+      CCUSTOMERADDRESS = #{ccustomeraddress,jdbcType=VARCHAR},
+      CWASHCARCODE = #{cwashcarcode,jdbcType=CHAR},
+      DSALEDATE = #{dsaledate,jdbcType=DATE},
+      DNEXTBYDATE = #{dnextbydate,jdbcType=DATE},
+      NNEXTBYMILES = #{nnextbymiles,jdbcType=DOUBLE},
+      CPDIS = #{cpdis,jdbcType=CHAR},
+      COUTSERVICEFLAG = #{coutserviceflag,jdbcType=CHAR},
+      CREVOKEFLAG = #{crevokeflag,jdbcType=CHAR},
+      CONTIMEFLAG = #{contimeflag,jdbcType=CHAR},
+      CFEEFORESEEFLAG = #{cfeeforeseeflag,jdbcType=CHAR},
+      DFIRSTPRINTDATE = #{dfirstprintdate,jdbcType=VARCHAR},
+      NPRINTPERSONID = #{nprintpersonid,jdbcType=INTEGER},
+      DWTSFIRSTPRINTDATE = #{dwtsfirstprintdate,jdbcType=VARCHAR},
+      NWTSPRINTPERSONID = #{nwtsprintpersonid,jdbcType=INTEGER},
+      CDIAGNOSENOPASSFLAG = #{cdiagnosenopassflag,jdbcType=CHAR},
+      CITEMADDFLAG = #{citemaddflag,jdbcType=CHAR},
+      CITEMDELFLAG = #{citemdelflag,jdbcType=CHAR},
+      CITEMUPDFLAG = #{citemupdflag,jdbcType=CHAR},
+      CBJADDFLAG = #{cbjaddflag,jdbcType=CHAR},
+      CBJDELFLAG = #{cbjdelflag,jdbcType=CHAR},
+      CBJUPDFLAG = #{cbjupdflag,jdbcType=CHAR},
+      CWTSSECONDPRINTFLAG = #{cwtssecondprintflag,jdbcType=CHAR},
+      NTRAFFICSUBSIDY = #{ntrafficsubsidy,jdbcType=DOUBLE},
+      CTRAFFICCARFLAG = #{ctrafficcarflag,jdbcType=CHAR},
+      CROADTRIDE = #{croadtride,jdbcType=CHAR},
+      CSPBJNOCLM = #{cspbjnoclm,jdbcType=CHAR},
+      CCHANGEORSCRAPFLAG = #{cchangeorscrapflag,jdbcType=CHAR},
+      NADVISORID = #{nadvisorid,jdbcType=INTEGER},
+      CUPLOADFLAG = #{cuploadflag,jdbcType=CHAR},
+      CUPLOADDATE = #{cuploaddate,jdbcType=VARCHAR},
+      COTOCODE = #{cotocode,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
